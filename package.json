@@ -2,9 +2,6 @@
     "name": "try2",
     "description": "Attempt at building a node site",
     "version": "0.0.1",
-     "scripts": {
-    "start": "node app.js"
-  },
     "dependencies": {
         "express": "3.x"
     }
