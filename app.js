@@ -6,7 +6,7 @@ var fs = require('fs');
 app.use(express.json());    /*makes sure it can handle json requests*/
 app.use(express.urlencoded());
 
-app.listen(3000);
+app.listen(process.env.PORT || 5000);
 
 app.get('/', function(request, response) {
     response.sendfile('./Views/index.html');
