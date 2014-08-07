@@ -14,7 +14,11 @@ app.get('/', function(request, response) {
 
 app.post('/', function(request, response) {
     var token = request.body.token
+    if (token == "391991"){
+    	response.download("./resources/" + token + "/f.mp3")
+    }else{
     response.download("./resources/" + token + "/test2.docx")
+	}	
 });
 
 /*error handler*/
