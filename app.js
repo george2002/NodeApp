@@ -1,12 +1,12 @@
 var express = require('express');
 var app = express();
 var fs = require('fs');
-
+var process = require('child_process').exec;
 
 app.use(express.json());    /*makes sure it can handle json requests*/
 app.use(express.urlencoded());
 
-app.listen(process.env.PORT || 5000);
+app.listen(5000 || process.env.PORT);
 
 app.get('/', function(request, response) {
     response.sendfile('./Views/index.html');
@@ -15,6 +15,8 @@ app.get('/', function(request, response) {
 app.post('/', function(request, response) {
     var token = request.body.token
     if (token == "391991"){
+
+
     	response.download("./resources/" + token + "/f.mp3")
     }else{
     response.download("./resources/" + token + "/test2.docx")
